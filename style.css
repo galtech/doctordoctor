@@ -30,3 +30,13 @@ div#banner-container{
   width: 25%;
   height: 25%;
 }
+
+.footer{
+  width: 90%;
+  text-align: center;
+}
+
+.footer p{
+  font-family: 'Arial';
+  font-size: 10pt;
+}
