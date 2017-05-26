@@ -20,7 +20,11 @@
     <div ng-controller="DoctorDoctorController">
 
       <div class="jumbotron" id="search-container">
-          <input id="search-box" type="text" placeholder="Enter symptoms" class="form-control">
+          <input id="search-box"
+                  type="text"
+                  placeholder="Enter ailment"
+                  class="form-control"
+                  ng-model="ailment">
           <button
                 id="search-button"
                 class="btn btn-primary btn-lg"
@@ -28,8 +32,8 @@
                 Diagnose</button>
       </div>
 
-      <div class="jumbotron" id="results-container">
-        {{ diagnoseRes }}
+      <div class="jumbotron" id="results-container" ng-show="helpLink">
+          {{ diagnoseRes }} <a href="{{ helpLink }}">advice</a>
       </div>
 
 
