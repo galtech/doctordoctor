@@ -8,8 +8,12 @@ angular.module('DoctorDoctorApp', [])
 DoctorDoctorController.$inject = ['$scope'];
 function DoctorDoctorController($scope){
 
+  var diagnoseRes = "";
+
   $scope.showResults = function(){
-      console.log('what are you doing here?');
+      $scope.diagnoseRes = "What are you doing here? Who searches symptoms online?\
+                          Get yourself to a doctor.";
+
   };
 
 }

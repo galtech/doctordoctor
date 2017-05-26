@@ -1,3 +1,7 @@
+h2{
+  text-align: center;
+}
+
 #search-box.form-control{
   width: 50%;
   margin: auto;
@@ -10,4 +14,19 @@ button#search-button{
 
 div#search-container{
   text-align: center;
+}
+
+div#results-container{
+  font-weight: bold;
+  color: red;
+  font-size: 18pt;
+}
+
+div#banner-container{
+    text-align: center;
+}
+
+#banner{
+  width: 25%;
+  height: 25%;
 }
