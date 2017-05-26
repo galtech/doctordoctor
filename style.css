@@ -1,4 +1,13 @@
-input{
-  width: 0.563em;
-  height: 0.375em;
+#search-box.form-control{
+  width: 50%;
+  margin: auto;
+}
+
+button#search-button{
+  width: 20%;
+  margin-top: .5em;
+}
+
+div#search-container{
+  text-align: center;
 }
