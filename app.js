@@ -19,8 +19,17 @@ function DoctorDoctorController($scope){
                             or pharmacist rather than attempting to self diagnose online\
                             however this link may help: ";
 
-      $scope.helpLink = baseLink + $scope.ailment;
+      $scope.helpLink = baseLink + lookupAilment($scope.ailment);
 
+  };
+
+  var lookupAilment = function(str){
+    var ailmentLst = ['cold','cough','ear','flu','rash','temperature','throat','tummy'];
+    for(var i=0;i<ailmentLst.length;i++){
+      if(str == str.match(/cough/g)){
+        return str;
+      }
+    }
   };
 
 }
