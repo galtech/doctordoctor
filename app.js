@@ -25,7 +25,8 @@ function DoctorDoctorController($scope){
 
   var lookupAilment = function(str){
     var ailmentLst = ['cold','cough','ear','flu','rash','temperature','throat','tummy'];
-    var enteredWords = str.split(' ');
+    var lowerCaseStr = str.toLowerCase();
+    var enteredWords = lowerCaseStr.split(' ');
     for(var i=0;i<enteredWords.length;i++){
         if(ailmentLst.includes(enteredWords[i])){
           return enteredWords[i];
