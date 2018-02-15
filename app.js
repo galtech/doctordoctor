@@ -20,12 +20,13 @@ function DoctorDoctorController($scope){
                             or pharmacist rather than attempting to self diagnose online\
                             however this link may help: ";
 
-      if(lookupAilment($scope.ailment) === 0){
+      var symptom = lookupAilment($scope.ailment);
+
+      if( symptom == null ){
         $scope.helpLink = domain + 'sitemap';
       }else{
-          $scope.helpLink = baseLink + lookupAilment($scope.ailment);
+        $scope.helpLink = baseLink + symptom;
       }
-
 
   };
 
@@ -36,9 +37,8 @@ function DoctorDoctorController($scope){
     for(var i=0;i<enteredWords.length;i++){
         if(ailmentLst.includes(enteredWords[i])){
           return enteredWords[i];
-        }else{
-          return 0;
         }
+
     }
   };
 
