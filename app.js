@@ -25,10 +25,11 @@ function DoctorDoctorController($scope){
 
   var lookupAilment = function(str){
     var ailmentLst = ['cold','cough','ear','flu','rash','temperature','throat','tummy'];
-    for(var i=0;i<ailmentLst.length;i++){
-      if(str == str.match(/cough/g)){
-        return str;
-      }
+    var enteredWords = str.split(' ');
+    for(var i=0;i<enteredWords.length;i++){
+        if(ailmentLst.includes(enteredWords[i])){
+          return enteredWords[i];
+        }
     }
   };
 
