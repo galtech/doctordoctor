@@ -9,7 +9,8 @@ DoctorDoctorController.$inject = ['$scope'];
 function DoctorDoctorController($scope){
 
   var diagnoseRes = "";
-  var baseLink = "http://undertheweather.ie/ailment/";
+  var domain = "http://undertheweather.ie/"
+  var baseLink = domain + "ailment/";
   var helpLink = "";
   var ailment = "";
 
@@ -19,7 +20,12 @@ function DoctorDoctorController($scope){
                             or pharmacist rather than attempting to self diagnose online\
                             however this link may help: ";
 
-      $scope.helpLink = baseLink + lookupAilment($scope.ailment);
+      if(lookupAilment($scope.ailment) === 0){
+        $scope.helpLink = domain + 'sitemap';
+      }else{
+          $scope.helpLink = baseLink + lookupAilment($scope.ailment);
+      }
+
 
   };
 
@@ -30,6 +36,8 @@ function DoctorDoctorController($scope){
     for(var i=0;i<enteredWords.length;i++){
         if(ailmentLst.includes(enteredWords[i])){
           return enteredWords[i];
+        }else{
+          return 0;
         }
     }
   };
